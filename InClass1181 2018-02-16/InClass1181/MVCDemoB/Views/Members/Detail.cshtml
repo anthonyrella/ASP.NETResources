@@ -1,0 +1,28 @@
+﻿@using MVCDemoB.Models
+@model Member
+
+@{
+    ViewBag.Title = "Detail";
+
+}
+
+<h2>Member Detail</h2>
+
+
+<b>@Html.DisplayNameFor(model => model.Id)</b>: @Html.DisplayFor(model => model.Id)
+<br />
+<b>@Html.DisplayNameFor(model => model.Name)</b>:@Html.DisplayFor(model => model.Name)
+<br />
+<table class="table">
+    
+    @foreach (Game g in Model.Games)
+    {
+        <tr>
+            <td>@g.Title</td>
+            <td>@g.Studio</td>
+        </tr>
+
+    }
+</table>
+@Html.ActionLink("Edit this Member", "Edit", new { Id = Model.Id }) |
+@Html.ActionLink("Member List", "Index")

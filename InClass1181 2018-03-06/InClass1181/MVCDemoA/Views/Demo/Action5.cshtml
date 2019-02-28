@@ -1,0 +1,21 @@
+﻿@using MVCDemoA.Models;
+
+@{
+    ViewBag.Title = "Action5";
+
+    //simulate database call and get member info in object
+    Member m = new Member();
+    m.MembershipID = 1;
+    m.FirstName = "Amandeep";
+    m.LastName = "Patti";
+
+
+}
+
+<h2>Action5</h2>
+@ViewBag.Message
+<br />
+@*@m.MembershipID - @m.FirstName @m.LastName*@
+
+@Html.Partial("_Member", m)
+

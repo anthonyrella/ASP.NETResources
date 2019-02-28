@@ -1,0 +1,23 @@
+﻿@using MVCDemoB.Models
+@model   Member
+
+
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Member</h2>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model=>model.Id)
+    <b>@Html.LabelFor(model=>model.Name)</b> @Html.EditorFor(model=>model.Name)
+    @Html.ValidationMessageFor(model=>model.Name)
+    <br />
+    <input type="submit" value="Update Member" />
+}
+<br />
+@Html.ActionLink("Member List", "Index")

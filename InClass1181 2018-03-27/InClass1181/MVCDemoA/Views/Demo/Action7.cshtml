@@ -1,0 +1,17 @@
+﻿@using MVCDemoA.Models
+@model IEnumerable<Member>
+
+
+@{
+    ViewBag.Title = "Action7";
+}
+
+<h2>Action7</h2>
+
+<p>@ViewBag.Message</p>
+@foreach (Member m in Model)
+{
+    @*@m.MembershipID  @m.FirstName @m.LastName*@
+    @Html.Partial("_Member", m)
+    <br />
+}

@@ -1,0 +1,30 @@
+﻿@using MVCDemoA.Models
+@using MVCDemoA.Models.ViewModels
+@model DailyReportVM
+
+@{
+    ViewBag.Title = "Action8";
+    IEnumerable<Member> Members = Model.NewMembers;
+    IEnumerable<Game> Games = Model.PopularGamesForTheDay; 
+
+}
+
+<h2>Action8</h2>
+<p>@ViewBag.Message</p>
+<br />
+
+<h3>New Members Joined Today</h3>
+<hr />
+@foreach (Member m in Members)
+{
+    @m.MembershipID  @m.FirstName @m.LastName
+    <br />
+}
+
+<h3>Games popular today</h3>
+<hr />
+@foreach (Game g in Games)
+{
+    @g.ID  @g.Title 
+    <br />
+}

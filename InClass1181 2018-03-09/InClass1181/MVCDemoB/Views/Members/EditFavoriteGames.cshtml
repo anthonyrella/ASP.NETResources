@@ -1,0 +1,35 @@
+﻿@using MVCDemoB.Models.VMs
+@model MemberFavoriteGamesVM
+
+@{
+    ViewBag.Title = "EditFavoriteGames";
+}
+
+<h2>Member Favorite Game Selection</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Member.Id)
+    <b>@Html.DisplayNameFor(model => model.Member.Name)</b> @Html.DisplayFor(model => model.Member.Name)
+
+    <br /><br />
+    <b>Select Game:</b><br />
+    <table class="table">
+        @for (int i = 0; i < Model.FavoriteGames.Count; i++)
+        {
+            <tr>
+                <td>
+                    @Html.HiddenFor(model => model.FavoriteGames[i].Id)
+                    @Html.EditorFor(model => model.FavoriteGames[i].isFavorite)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.FavoriteGames[i].GameInfo)
+                </td>
+            </tr>
+        }
+    </table>
+    <input type="submit" value="Update Favorite Games" />
+
+    }
+
+    @Html.ActionLink("Member List", "Index")

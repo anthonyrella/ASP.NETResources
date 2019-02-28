@@ -1,0 +1,22 @@
+﻿@using MVCDemoB.Models
+@model Member
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add New Member</h2>
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm())
+{
+    <b>@Html.LabelFor(model=>model.Name)</b> @Html.EditorFor(model=>model.Name) 
+    @Html.ValidationMessageFor(model=>model.Name)
+    <br />
+    <input type="submit" value="Add Member" />
+}
+<br />
+@Html.ActionLink("List of Members","Index")
+

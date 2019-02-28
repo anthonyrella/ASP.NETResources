@@ -1,0 +1,17 @@
+﻿@using MVCDemoB.Models
+@model   Member
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Member?</h2>
+<b>@Html.DisplayNameFor(model=>model.Name)</b> @Html.DisplayFor(model=>model.Name)
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model=>model.Id)
+    <input type="submit"  value="Delete" />
+}
+<br />
+@Html.ActionLink("Member List", "Index")
+
